@@ -1,11 +1,13 @@
 package xyz.glorin.queuedworkhacklib.proxies;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
-import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
-public class ConcurrentLinkedQueueProxy<E> extends ConcurrentLinkedDeque<E> {
+public class ConcurrentLinkedQueueProxy<E> extends ConcurrentLinkedQueue<E> {
+    private static final String TAG = "QueuedWorkHack-CLQProxy";
     private final ConcurrentLinkedQueue<E> mQueue;
 
     public ConcurrentLinkedQueueProxy(@NonNull ConcurrentLinkedQueue<E> queue) {
@@ -24,6 +26,7 @@ public class ConcurrentLinkedQueueProxy<E> extends ConcurrentLinkedDeque<E> {
 
     @Override
     public E poll() {
+        Log.d(TAG, "poll");
         return null;
     }
 

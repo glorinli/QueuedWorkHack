@@ -29,6 +29,7 @@ public class QueuedWorkHack {
             Hacker hacker = getHacker();
             if (hacker != null) {
                 hacker.hack();
+                Log.i(TAG, "Hack success!!!");
             } else {
                 Log.w(TAG, "Unsupported system");
             }

@@ -4,7 +4,6 @@ import java.lang.reflect.Field;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 import xyz.glorin.queuedworkhacklib.Hacker;
-import xyz.glorin.queuedworkhacklib.ReflectUtils;
 import xyz.glorin.queuedworkhacklib.proxies.ConcurrentLinkedQueueProxy;
 
 public class PreNHacker implements Hacker {
@@ -16,7 +15,7 @@ public class PreNHacker implements Hacker {
 
         sPendingWorkFinishers.setAccessible(true);
 
-        ReflectUtils.setFinalStatic(sPendingWorkFinishers,
+        sPendingWorkFinishers.set(null,
                 new ConcurrentLinkedQueueProxy<>((ConcurrentLinkedQueue<Runnable>) sPendingWorkFinishers.get(null)));
     }
 }
