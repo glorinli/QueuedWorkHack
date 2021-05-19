@@ -27,6 +27,7 @@ public class LinkedListProxy<E> extends LinkedList<E> {
 
     @Override
     public E poll() {
+        mList.poll();
         Log.d(TAG, "poll");
         return null;
     }

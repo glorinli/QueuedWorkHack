@@ -27,6 +27,7 @@ public class ConcurrentLinkedQueueProxy<E> extends ConcurrentLinkedQueue<E> {
     @Override
     public E poll() {
         Log.d(TAG, "poll");
+        mQueue.poll();
         return null;
     }
 
